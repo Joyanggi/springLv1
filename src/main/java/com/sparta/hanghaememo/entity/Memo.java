@@ -1,5 +1,6 @@
 package com.sparta.hanghaememo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sparta.hanghaememo.dto.MemoRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class Memo extends Timestamped {
     @Column(nullable = false)
     private String title;
 
+    @JsonIgnore
     @Column(nullable = false)
     private String password;
 

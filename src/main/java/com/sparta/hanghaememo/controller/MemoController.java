@@ -22,6 +22,7 @@ public class MemoController {
         return new ModelAndView("index");
     }
 
+
     @PostMapping("/api/post")
     public Memo createMemo(@RequestBody MemoRequestDto requestDto) {
         return memoService.createMemo(requestDto);
