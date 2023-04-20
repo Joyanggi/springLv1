@@ -26,7 +26,7 @@ public class MemoService {
 
     @Transactional(readOnly = true)
     public List<Memo> getMemos() {
-        return memoRepository.findAllByOrderByModifiedAtDesc();
+        return memoRepository.findAllByOrderByCreatedAtDesc();
     }
 
     @Transactional(readOnly = true)

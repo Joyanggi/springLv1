@@ -22,27 +22,27 @@ public class MemoController {
         return new ModelAndView("index");
     }
 
-    @PostMapping("/api/memos")
+    @PostMapping("/api/post")
     public Memo createMemo(@RequestBody MemoRequestDto requestDto) {
         return memoService.createMemo(requestDto);
     }
 
-    @GetMapping("/api/memos")
+    @GetMapping("/api/posts")
     public List<Memo> getMemos() {
         return memoService.getMemos();
     }
 
-    @GetMapping("/api/memos/{id}")
+    @GetMapping("/api/post/{id}")
     public ResponseDto<?> getMemosId(@PathVariable Long id) {
         return memoService.getMemosId(id);
     }
 
-    @PutMapping("/api/memos/{id}")
+    @PutMapping("/api/post/{id}")
     public ResponseDto<?> updateMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
         return memoService.update(id, requestDto);
     }
 
-    @DeleteMapping("/api/memos/{id}")
+    @DeleteMapping("/api/post/{id}")
     public ResponseDto<?> deleteMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {
         return memoService.deleteMemo(id, requestDto);
     }

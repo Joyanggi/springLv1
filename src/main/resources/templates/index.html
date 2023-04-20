@@ -21,7 +21,7 @@
             // 2. 메모 목록을 불러와서 HTML로 붙입니다.
             $.ajax({
                 type: "GET",
-                url: "/api/memos",
+                url: "/api/posts",
                 data: {},
                 success: function (response) {
                     for (let i = 0; i < response.length; i++) {
@@ -47,12 +47,12 @@
 
         function makeMessage(id, username, contents, modifiedAt, title) {
             return `<div class="card">
-                        <!-- date/username 영역 -->
+                        <!-- date/ 영역 -->
                         <div class="metadata">
                             <div class="date">
                                 ${modifiedAt}
                             </div>
-                            <div id="${id}-username" class="username">
+                            <div id="${id}-" class="username">
                                 ${username}
                             </div>
 
@@ -131,7 +131,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "/api/memos",
+                url: "/api/posts",
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (response) {
@@ -177,7 +177,7 @@
             // 4. PUT /api/memos/{id} 에 data를 전달합니다.
             $.ajax({
                 type: "PUT",
-                url: `/api/memos/${id}`,
+                url: `/api/posts/${id}`,
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (response) {
@@ -201,7 +201,7 @@
 
             $.ajax({
                 type: "DELETE",
-                url: `/api/memos/${id}`,
+                url: `/api/posts/${id}`,
                 contentType: "application/json",
                 data: JSON.stringify(data),
                 success: function (response) {
